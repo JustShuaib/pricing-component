@@ -1,0 +1,126 @@
+@import "variables";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $manrope;
+}
+.container {
+  background-color: $very-pale-blue;
+  // background-image: url(./images/bg-pattern.svg);
+
+  @at-root #{&}__heading {
+    @include heading;
+  }
+  @at-root #{&}__copy {
+    color: $grayish-blue;
+    text-align: center;
+    line-height: 1.5rem;
+    letter-spacing: 0.05r em;
+    width: 16rem;
+    margin: 1rem auto;
+    @media screen and (min-width: 800px) {
+      & {
+        width: auto;
+      }
+    }
+  }
+}
+.card {
+  background-color: white;
+  color: $grayish-blue;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  @at-root #{&}__heading-container {
+    display: grid;
+    @media screen and (min-width: 800px) {
+      & {
+        // grid-template-areas:
+        //   "heading price"
+        //   "slider slider";
+        // grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  @at-root #{&}__heading {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    order: 0;
+    @include heading;
+    @media screen and (min-width: 800px) {
+      & {
+        // grid-area: heading;
+      }
+    }
+  }
+  @at-root #{&}__heading--big {
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+  }
+}
+.card__heading-range {
+  order: 1;
+  -webkit-appearance: none;
+  height: 6px;
+  width: 90%;
+  border-radius: 5px;
+  margin: 2rem auto;
+  accent-color: $soft-cyan;
+  background-color: $light-grayish-blue;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    background-color: $strong-cyan;
+    border-radius: 100%;
+    padding: 1rem;
+    background-image: url(./images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: $strong-cyan 0px 8px 24px;
+  }
+}
+.card__billing {
+  border-bottom: 0.5px solid $grayish-blue;
+  padding-bottom: 2rem;
+}
+.card__list-container {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 800px) {
+    & {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+.card__list-group {
+  margin: 2rem 0;
+  text-align: center;
+  display: inline-block;
+}
+.card__list-item {
+  list-style-image: url(./images/icon-check.svg);
+}
+.card__btn {
+  display: block;
+  background: $dark-desaturated-blue;
+  color: $pale-blue;
+  border: none;
+  padding: 0.7rem 3rem;
+  margin: 0 auto;
+  border-radius: 20px;
+  cursor: pointer;
+}
