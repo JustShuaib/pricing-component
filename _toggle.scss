@@ -20,6 +20,12 @@
     left: toRem(3);
     transition: 0.5s;
   }
+  @media screen and (min-width: 400px) {
+    &::after {
+      top: toRem(3.7);
+      left: toRem(3);
+    }
+  }
   @media screen and (min-width: 800px) {
     & {
       width: toRem(45);
