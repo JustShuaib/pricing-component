@@ -1,6 +1,8 @@
-const range = document.getElementById("range");
-const price = document.getElementById("price");
-range.addEventListener("input", () => {
-  console.log(range.value);
-  price.textContent = `$${range.value}`;
+const range = document.getElementById("range"),
+  price = document.getElementById("price");
+range.addEventListener("input", (e) => {
+  const val = range.value;
+  price.textContent = `$${Number(val).toFixed(2)}`;
+  // Sliding background
+  e.target.style.backgroundSize = ((val - 0) * 100) / (100 - 0) + "% 100%";
 });

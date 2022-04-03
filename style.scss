@@ -67,16 +67,18 @@ body {
   }
 }
 .card__heading-range {
-  order: 1;
   -webkit-appearance: none;
-  height: 6px;
+  order: 1;
+  height: 7px;
   width: 90%;
   border-radius: 5px;
   margin: 2rem auto;
-  accent-color: $soft-cyan;
   background-color: $light-grayish-blue;
+  background-image: linear-gradient($strong-cyan, $strong-cyan);
+  background-size: 50%;
+  background-repeat: no-repeat;
   &:focus {
-    outline: none;
+    border: none;
   }
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -90,9 +92,12 @@ body {
     cursor: pointer;
     box-shadow: $strong-cyan 0px 8px 24px;
   }
+  &::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+  }
 }
 .card__billing {
-  border-bottom: 0.5px solid $grayish-blue;
+  border-bottom: 0.5px solid rgb(228, 228, 228);
   padding-bottom: 2rem;
 }
 .card__list-container {
@@ -116,6 +121,7 @@ body {
 }
 .card__btn {
   display: block;
+  font-family: inherit;
   background: $dark-desaturated-blue;
   color: $pale-blue;
   border: none;
