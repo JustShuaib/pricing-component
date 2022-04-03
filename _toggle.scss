@@ -1,7 +1,7 @@
 .card__billing-label {
-  margin: 0 0.5rem;
-  width: toRem(45);
-  height: toRem(25);
+  margin: 0 0.3rem;
+  width: toRem(35);
+  height: toRem(20);
   display: inline-block;
   vertical-align: middle;
   background-color: $light-grayish-blue;
@@ -11,14 +11,26 @@
   transition: 0.5s;
   &::after {
     content: "";
-    width: toRem(17);
-    height: toRem(17);
+    width: toRem(12);
+    height: toRem(12);
     background-color: white;
     position: absolute;
     border-radius: 100%;
     top: toRem(3.5);
     left: toRem(3);
     transition: 0.5s;
+  }
+  @media screen and (min-width: 800px) {
+    & {
+      width: toRem(45);
+      height: toRem(25);
+    }
+    &::after {
+      width: toRem(17);
+      height: toRem(17);
+      top: toRem(3.5);
+      left: toRem(3);
+    }
   }
 }
 .card__billing-toggle {

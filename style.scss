@@ -17,11 +17,11 @@ body {
     background-image: url(./images/pattern-circles.svg);
     background-repeat: no-repeat;
     background-position: center;
-    padding: 3rem;
+    padding: 3rem 0;
   }
   @at-root #{&}__heading {
     @include heading;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
   @at-root #{&}__copy {
     color: $grayish-blue;
@@ -41,7 +41,7 @@ body {
   background-color: white;
   color: $grayish-blue;
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
   max-width: 500px;
   margin: 3rem auto;
   margin-bottom: 6rem;
@@ -60,10 +60,9 @@ body {
       }
     }
   }
-  // !The heading
   @at-root #{&}__heading {
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: 0.1rem;
     order: 0;
     @include heading;
@@ -72,6 +71,8 @@ body {
         grid-area: heading;
         margin-bottom: 0;
         padding-top: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
       }
     }
   }
@@ -84,13 +85,19 @@ body {
     }
   }
   @at-root #{&}__heading--big {
-    font-size: 2rem;
-    color: rgb(63, 63, 63);
+    font-size: 1.5rem;
+    color: $dark-desaturated-blue;
     font-weight: bold;
+    @media screen and (min-width: 800px) {
+      & {
+        font-size: 2rem;
+      }
+    }
   }
 }
 .card__billing {
   width: 120%;
+  font-size: toRem(14);
   margin-left: -10%;
   margin-top: 1rem;
   border-bottom: 0.5px solid rgb(228, 228, 228);
@@ -99,6 +106,7 @@ body {
     & {
       width: 114.5%;
       margin-left: -7%;
+      font-size: 1rem;
     }
   }
 }
@@ -108,6 +116,15 @@ body {
   border-radius: 20px;
   padding: 0.2rem 0.5rem;
   font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 0.3rem;
+  @media screen and (min-width: 800px) {
+    & {
+      font-size: 1rem;
+      margin-top: 0;
+    }
+  }
 }
 .card__list-container {
   @media screen and (min-width: 800px) {
