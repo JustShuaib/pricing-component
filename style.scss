@@ -1,4 +1,6 @@
 @import "variables";
+@import "toggle";
+@import "slider";
 * {
   padding: 0;
   margin: 0;
@@ -9,17 +11,24 @@ body {
 }
 .container {
   background-color: $very-pale-blue;
-  // background-image: url(./images/bg-pattern.svg);
-
+  background-image: url(./images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  @at-root #{&}__heading-container {
+    background-image: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3rem;
+  }
   @at-root #{&}__heading {
     @include heading;
+    font-size: 1.7rem;
   }
   @at-root #{&}__copy {
     color: $grayish-blue;
     text-align: center;
     line-height: 1.5rem;
     letter-spacing: 0.05r em;
-    width: 16rem;
+    width: 14rem;
     margin: 1rem auto;
     @media screen and (min-width: 800px) {
       & {
@@ -35,6 +44,7 @@ body {
   width: 80%;
   max-width: 500px;
   margin: 3rem auto;
+  margin-bottom: 6rem;
   padding: 2rem;
   text-align: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -42,69 +52,67 @@ body {
     display: grid;
     @media screen and (min-width: 800px) {
       & {
-        // grid-template-areas:
-        //   "heading price"
-        //   "slider slider";
-        // grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          "heading price"
+          "slider slider";
+        align-items: center;
+        justify-content: space-between;
       }
     }
   }
+  // !The heading
   @at-root #{&}__heading {
     text-transform: uppercase;
     font-size: 1.2rem;
+    letter-spacing: 0.1rem;
     order: 0;
     @include heading;
     @media screen and (min-width: 800px) {
       & {
-        // grid-area: heading;
+        grid-area: heading;
+        margin-bottom: 0;
+        padding-top: 0;
+      }
+    }
+  }
+  @at-root #{&}__price {
+    order: 3;
+    @media screen and (min-width: 800px) {
+      & {
+        grid-area: price;
       }
     }
   }
   @at-root #{&}__heading--big {
     font-size: 2rem;
-    color: black;
+    color: rgb(63, 63, 63);
     font-weight: bold;
   }
 }
-.card__heading-range {
-  -webkit-appearance: none;
-  order: 1;
-  height: 7px;
-  width: 90%;
-  border-radius: 5px;
-  margin: 2rem auto;
-  background-color: $light-grayish-blue;
-  background-image: linear-gradient($strong-cyan, $strong-cyan);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  &:focus {
-    border: none;
-  }
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 10px;
-    background-color: $strong-cyan;
-    border-radius: 100%;
-    padding: 1rem;
-    background-image: url(./images/icon-slider.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    box-shadow: $strong-cyan 0px 8px 24px;
-  }
-  &::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-  }
-}
 .card__billing {
+  width: 120%;
+  margin-left: -10%;
+  margin-top: 1rem;
   border-bottom: 0.5px solid rgb(228, 228, 228);
   padding-bottom: 2rem;
-}
-.card__list-container {
-  display: flex;
-  flex-direction: column;
   @media screen and (min-width: 800px) {
     & {
+      width: 114.5%;
+      margin-left: -7%;
+    }
+  }
+}
+.card__discount {
+  background-color: $light-grayish-red;
+  color: $light-red;
+  border-radius: 20px;
+  padding: 0.2rem 0.5rem;
+  font-weight: bold;
+}
+.card__list-container {
+  @media screen and (min-width: 800px) {
+    & {
+      display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -113,11 +121,18 @@ body {
 }
 .card__list-group {
   margin: 2rem 0;
-  text-align: center;
-  display: inline-block;
+  list-style-type: none;
 }
 .card__list-item {
-  list-style-image: url(./images/icon-check.svg);
+  margin-top: 0.6rem;
+  @media screen and (min-width: 800px) {
+    & {
+      text-align: left;
+    }
+  }
+}
+.card__list-img {
+  margin-right: 0.5rem;
 }
 .card__btn {
   display: block;
@@ -126,7 +141,17 @@ body {
   color: $pale-blue;
   border: none;
   padding: 0.7rem 3rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   border-radius: 20px;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5%);
+  }
+  @media screen and (min-width: 800px) {
+    & {
+      margin: 0;
+    }
+  }
 }

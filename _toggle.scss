@@ -1,0 +1,37 @@
+.card__billing-label {
+  margin: 0 0.5rem;
+  width: toRem(45);
+  height: toRem(25);
+  display: inline-block;
+  vertical-align: middle;
+  background-color: $light-grayish-blue;
+  border-radius: toRem(20);
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+  &::after {
+    content: "";
+    width: toRem(17);
+    height: toRem(17);
+    background-color: white;
+    position: absolute;
+    border-radius: 100%;
+    top: toRem(3.5);
+    left: toRem(3);
+    transition: 0.5s;
+  }
+}
+.card__billing-toggle {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+// Checked
+.card__billing-toggle:checked + .card__billing-label:after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+.card__billing-toggle:checked + .card__billing-label {
+  background-color: $strong-cyan;
+}

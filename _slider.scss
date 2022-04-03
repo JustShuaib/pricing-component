@@ -1,0 +1,35 @@
+.card__heading-range {
+  -webkit-appearance: none;
+  order: 1;
+  height: 7px;
+  width: 90%;
+  border-radius: 5px;
+  margin: 2rem auto;
+  background-color: $light-grayish-blue;
+  background-image: linear-gradient($strong-cyan, $strong-cyan);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  &:focus {
+    border: none;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    background-color: $strong-cyan;
+    border-radius: 100%;
+    padding: 1rem;
+    background-image: url(./images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: $strong-cyan 0px 6px 24px;
+  }
+  &::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+  }
+  @media screen and (min-width: 800px) {
+    & {
+      grid-area: slider;
+    }
+  }
+}

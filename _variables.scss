@@ -16,6 +16,9 @@ $dark-desaturated-blue: hsl(227, 35%, 25%);
 $manrope: Manrope, "sans-serif";
 @mixin heading {
   text-align: center;
-  padding-top: 2rem;
   margin-bottom: 0.5rem;
+}
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
 }

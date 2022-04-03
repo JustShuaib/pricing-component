@@ -18,15 +18,17 @@
   </head>
   <body>
     <main class="container">
-      <h1 class="container__heading">Simple, traffic-based pricing</h1>
-      <p class="container__copy">
-        Sign-up for our 30-day trial. No credit card required.
-      </p>
+      <div class="container__heading-container">
+        <h1 class="container__heading">Simple, traffic-based pricing</h1>
+        <p class="container__copy">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
+      </div>
       <section>
         <div class="card">
           <section class="card__heading-container">
             <h2 class="card__heading"><span>100</span>K Pageviews</h2>
-            <div>
+            <div class="card__price">
               <span id="price" class="card__heading--big">$16.00</span>/ month
             </div>
             <input
@@ -38,15 +40,44 @@
           </section>
           <div class="card__billing">
             Monthly Billing
-            <img src="./images/icon-slider.svg" alt="slider" /> Yearly Billing
-            <span> -25% </span>
+            <!-- Toggle btn -->
+            <input
+              type="checkbox"
+              name="switch"
+              id="switch"
+              class="card__billing-toggle"
+            />
+            <label for="switch" class="card__billing-label"> </label>
+            Yearly Billing
+            <span class="card__discount"> -25% </span>
           </div>
           <section>
             <div class="card__list-container">
               <ul class="card__list-group">
-                <li class="card__list-item">Unlimited websites</li>
-                <li class="card__list-item">100% data ownership</li>
-                <li class="card__list-item">Email reports</li>
+                <li class="card__list-item">
+                  <img
+                    src="./images/icon-check.svg"
+                    alt="check icon"
+                    class="card__list-img"
+                  />
+                  Unlimited websites
+                </li>
+                <li class="card__list-item">
+                  <img
+                    src="./images/icon-check.svg"
+                    alt="check icon"
+                    class="card__list-img"
+                  />
+                  100% data ownership
+                </li>
+                <li class="card__list-item">
+                  <img
+                    src="./images/icon-check.svg"
+                    alt="check icon"
+                    class="card__list-img"
+                  />
+                  Email reports
+                </li>
               </ul>
               <button type="button" class="card__btn">Start my trial</button>
             </div>
@@ -54,12 +85,6 @@
         </div>
       </section>
     </main>
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
     <script src="./app.js"></script>
   </body>
 </html>
