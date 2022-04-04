@@ -27,7 +27,9 @@
       <section>
         <div class="card">
           <section class="card__heading-container">
-            <h2 class="card__heading"><span>100</span>K Pageviews</h2>
+            <h2 class="card__heading">
+              <span id="page-views">100K</span> Pageviews
+            </h2>
             <div class="card__price">
               <span id="price" class="card__heading--big">$16.00</span>/ month
             </div>
@@ -35,6 +37,8 @@
               type="range"
               name=""
               id="range"
+              min="8"
+              max="36"
               class="card__heading-range"
             />
           </section>
@@ -49,7 +53,7 @@
             />
             <label for="switch" class="card__billing-label"> </label>
             Yearly Billing
-            <span class="card__discount"> -25% </span>
+            <span class="card__discount" id="discount"> -25% </span>
           </div>
           <section>
             <div class="card__list-container">

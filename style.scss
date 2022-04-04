@@ -66,6 +66,11 @@ body {
     letter-spacing: 0.1rem;
     order: 0;
     @include heading;
+    @media screen and (min-width: 400px) {
+      & {
+        font-size: 1.125rem;
+      }
+    }
     @media screen and (min-width: 800px) {
       & {
         grid-area: heading;
