@@ -23,8 +23,12 @@
     background-image: url(./images/icon-slider.svg);
     background-repeat: no-repeat;
     background-position: center;
-    cursor: pointer;
+    cursor: grab;
     box-shadow: $strong-cyan 0px 6px 24px;
+    &:active {
+      background-color: hsl(174, 89%, 29%);
+      cursor: grabbing;
+    }
   }
   &::-webkit-slider-runnable-track {
     -webkit-appearance: none;
@@ -40,7 +44,12 @@
     background-position: center;
     cursor: pointer;
     box-shadow: $strong-cyan 0px 6px 24px;
+    &:active {
+      cursor: grabbing;
+    }
   }
+}
+.card__heading-label {
   @media screen and (min-width: 800px) {
     & {
       grid-area: slider;
